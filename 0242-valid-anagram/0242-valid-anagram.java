@@ -1,24 +1,24 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
+        
+        int z='z';
+        int[] frequency= new int[z+1];
 
-        Map<Character, Integer> frequencyOfChars = new HashMap<>();
-
-        // Push frequency of characters to map
-        for (char c : s.toCharArray()) {
-            frequencyOfChars.put(c, frequencyOfChars.getOrDefault(c, 0) + 1);
+        for(char c : s.toCharArray()){
+            frequency[c]++;
         }
 
-        // Pop frequency of characters from map
-        for (char c : t.toCharArray()) {
-            frequencyOfChars.put(c, frequencyOfChars.getOrDefault(c, 0) - 1);
+         for(char c : t.toCharArray()){
+            frequency[c]--;
         }
 
-        for (int val : frequencyOfChars.values()) {
-            if (val != 0) {
+        for(int val : frequency ){
+            if(val != 0){
                 return false;
             }
         }
 
         return true;
+        
     }
 }
