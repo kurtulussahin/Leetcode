@@ -9,7 +9,7 @@ class Solution {
         while(left<right){
             if(Math.min(height[left], height[right])*(right-left)> result){
                 result=Math.min(height[left], height[right])*(right-left);
-            }else if (Math.min(height[left], height[right])*(right-left)<= result){
+            }else {
                 if(height[right]<height[left]){
                     right--;
                 }else{
